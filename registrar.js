@@ -1,8 +1,8 @@
 addEventListener("load", load);
 //llamo al servidor
 //var servi = "http://localhost:444";
-//prueba
-var servi = "https://leonelgirett.herokuapp.com/";
+
+var servi = "https://serviback.herokuapp.com/";
 
 function $(demo){
     return document.getElementById(demo);
