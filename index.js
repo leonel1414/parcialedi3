@@ -1,8 +1,8 @@
 addEventListener("load", load);
 //llamo al servidor.
-//var servi = "http://localhost:444/login";
+var servi = "http://localhost:444";
 
- var servi = "https://serviback.herokuapp.com/login/";
+ //var servi = "https://serviback.herokuapp.com/frontend";
 
 function $(demo){
     return document.getElementById(demo);
@@ -30,7 +30,7 @@ function retornoDelClick(respuesta){
 function enviarMensajeAlServidor(servi, funcionARealizar){
     var xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.open("GET",servi,true);
+    xmlhttp.open("GET",servi ,true);
 
     xmlhttp.onreadystatechange = function(){
 
