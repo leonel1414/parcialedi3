@@ -8,7 +8,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 use Slim\Routing\RouteContext;
-require __DIR__ . '/..vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/acessoDatos/AcessoDatos.php';
 require __DIR__ . '/entidades/Usuario.php';
 require __DIR__ . '/controllers/usuarioController.php';
@@ -59,9 +59,9 @@ $app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
 
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
-/*$app->group('[/]', function (RouteCollectorProxy $group) {
+/*$app->group('/frontend', function (RouteCollectorProxy $group) {
     $app->get('[/]', \usuarioController::class . ':CrearUsuario');
-    $app->get('/login[/]', \usuarioController::class . ':retornarUsuario');
+    $app->get('/login/[/]', \usuarioController::class . ':retornarUsuario');
 });*/
 
 $app->run();
