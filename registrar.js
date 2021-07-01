@@ -1,5 +1,5 @@
 addEventListener("load", load);
-//llamo al servidor
+//llamo al servidor.
 //var servi = "http://localhost:444";
 
 var servi = "https://serviback.herokuapp.com/";
@@ -74,17 +74,3 @@ function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
     //envio el mensaje    
     xmlhttp.send(datos);
 }
-
-
-
-/*function cargarOpcionesPeliculas(valor) {
-    var peliculas = JSON.parse(valor);
-    peliculas.sort(function (x, y) { return x.nombre.localeCompare(y.nombre) });
-    var opciones = ['<option value=0>Selecciones una pelicula</option>']
-
-    pelicula.forEach(element => {
-        opciones.push('<option value="' + element.valor + '">' + element.nombre + '</option>');
-    });
-
-    document.getElementById('peliculas').innerHTML = opciones;
-}*/
