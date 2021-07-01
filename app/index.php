@@ -55,7 +55,7 @@ $app->get('/hello/{name}', function (
     return $response;
 });
 //ruteo frontend,grupo adentro los get con post
-$app->post('/prueba[/]', \usuarioController::class . ':CrearUsuario');
+$app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
 
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
