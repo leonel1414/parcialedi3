@@ -1,6 +1,7 @@
 addEventListener("load", load);
 //llamo al servidor.
-var servi = "http://localhost:444/login";
+//var servi = "http://localhost:444/login";
+var servi = "https://serviback.herokuapp.com/login";
 
  //var servi = "https://serviback.herokuapp.com/frontend";
 
@@ -55,6 +56,21 @@ function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
     var datos = new FormData();
     datos.append("nombre",$("usuario").value);
     datos.append("contrasena",$("contrasenia").value);
+    var usuario=document.getElementById('usuario').value;
+    var contrasenia=document.getElementById('contrasenia').value;
+    var msg="llenar los siguientes campos que estan vacios:\n";
+    var ok=true;
+    if(usuario==""){
+        msg+="Usuario\n";
+        ok=false;
+    }
+    if(contrasenia==""){
+        msg+="contraseña\n";
+        ok=false;
+    }
+    if(ok==false){
+        alert(msg);
+    }else{
 
     // indico hacia donde va el mensaje
     xmlhttp.open("POST", servidor, true);
@@ -77,4 +93,5 @@ function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
 
     //envio el mensaje    
     xmlhttp.send(datos);
+}
 }
