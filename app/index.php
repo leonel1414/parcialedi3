@@ -61,9 +61,9 @@ $app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
 */
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
-$app->group('/frontend', function (RouteCollectorProxy $group) {
-    $group->get('[/]', \usuarioController::class . ':CrearUsuario');
-    $group->get('/login/[/]', \usuarioController::class . ':retornarUsuario');
+$app->group('/Frontend', function (RouteCollectorProxy $group) {
+    $group->post('/Crear', \usuarioController::class . ':CrearUsuario');
+    $group->post('/Login', \usuarioController::class . ':retornarUsuario');
 });
 
 $app->run();
