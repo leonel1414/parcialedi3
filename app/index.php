@@ -54,14 +54,16 @@ $app->get('/hello/{name}', function (
     $response->getBody()->write("Hello, $name");
     return $response;
 });
+
 //ruteo frontend,grupo adentro los get con post
+/*
 $app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
-
+*/
 //$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
-/*$app->group('/frontend', function (RouteCollectorProxy $group) {
-    $app->get('[/]', \usuarioController::class . ':CrearUsuario');
-    $app->get('/login/[/]', \usuarioController::class . ':retornarUsuario');
-});*/
+$app->group('/frontend', function (RouteCollectorProxy $group) {
+    $group->get('[/]', \usuarioController::class . ':CrearUsuario');
+    $group->get('/login/[/]', \usuarioController::class . ':retornarUsuario');
+});
 
 $app->run();
