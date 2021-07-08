@@ -1,7 +1,7 @@
 addEventListener("load", load);
 //llamo al servidor.
 //var servi = "http://localhost:444/login";
-var servi = "https://serviback.herokuapp.com/login";
+var servi = "https://serviback.herokuapp.com";
 
  //var servi = "https://serviback.herokuapp.com/frontend";
 
@@ -58,7 +58,7 @@ function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
     datos.append("contrasena",$("contrasenia").value);
 
     // indico hacia donde va el mensaje
-    xmlhttp.open("POST", servidor, true);
+    xmlhttp.open("POST", servidor +'/Frontend/Login', true);
     //seteo el evento
     xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
