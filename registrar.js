@@ -29,6 +29,22 @@ function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
     var datos = new FormData();
     datos.append("nombre",$("usuario1").value);
     datos.append("contrasena",$("contra1").value);
+
+    var usuario=document.getElementById('usuario1').value;
+    var contrasenia=document.getElementById('contra1').value;
+    var msg="llenar los siguientes campos que estan vacios:\n";
+    var ok=true;
+    if(usuario==""){
+        msg+="Usuario\n";
+        ok=false;
+    }
+    if(contrasenia==""){
+        msg+="contraseña\n";
+        ok=false;
+    }
+    if(ok==false){
+        alert(msg);
+    }else{
     
     // indico hacia donde va el mensaje
     xmlhttp.open("POST",servi +'/Frontend/Crear',true);
@@ -51,4 +67,5 @@ function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
 
     //envio el mensaje    
     xmlhttp.send(datos);
+}
 }
