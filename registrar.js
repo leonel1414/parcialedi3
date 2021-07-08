@@ -21,28 +21,6 @@ function retornoDelClick(respuesta){
     alert(respuesta);
 }
 
-function enviarMensajeAlServidor(servi, funcionARealizar){
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.open("GET",servi,true);
-
-    xmlhttp.onreadystatechange = function(){
-
-        if(xmlhttp.readyState == XMLHttpRequest.DONE){
-            if(xmlhttp.status == 200){
-                console.log(xmlhttp.response);
-                funcionARealizar(xmlhttp.responseText);
-            }else{
-                alert("Ocurrio un error");
-            }
-        }
-
-    }
-    xmlhttp.send();
-
-    
-}
-
 
 function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
 
@@ -53,7 +31,7 @@ function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
     datos.append("contrasena",$("contra1").value);
     
     // indico hacia donde va el mensaje
-    xmlhttp.open("GET",servi +'/Frontend/Crear',true);
+    xmlhttp.open("POST",servi +'/Frontend/Crear',true);
     //seteo el evento
     xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor

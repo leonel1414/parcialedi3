@@ -28,26 +28,6 @@ function retornoDelClick(respuesta){
     }
 }
 
-function enviarMensajeAlServidor(servi, funcionARealizar){
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.open("GET",servi ,true);
-
-    xmlhttp.onreadystatechange = function(){
-
-        if(xmlhttp.readyState == XMLHttpRequest.DONE){
-            if(xmlhttp.status == 200){
-                console.log(xmlhttp.response);
-                funcionARealizar(xmlhttp.responseText);
-            }else{
-                alert("Ocurrio un error");
-            }
-        }
-
-    }
-    xmlhttp.send();    
-}
-
 
 function enviarMensajeAlServidorPost(servidor, funcionARealizar) {
 
