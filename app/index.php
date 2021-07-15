@@ -12,6 +12,8 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/acessoDatos/AcessoDatos.php';
 require __DIR__ . '/entidades/usuario.php';
 require __DIR__ . '/controllers/usuarioController.php';
+require __DIR__ . '/entidades/productos.php';
+require __DIR__ . '/controllers/productosController.php';
 
 $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
@@ -45,25 +47,17 @@ $app->add(function (
     return $response;
 });
 
-$app->get('/hello/{name}', function (
-    Request $request,
-    Response $response,
-    array $args
-) {
-    $name = $args['name'];
-    $response->getBody()->write("Hello, $name");
-    return $response;
-});
 
-//ruteo frontend,grupo adentro los get con post
-/*
-$app->post('[/]', \usuarioController::class . ':CrearUsuario');
-$app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
-*/
-//$app->post('/peliculas[/]', \usuarioController::class . ':retornarUsuario');
 $app->group('/Frontend', function (RouteCollectorProxy $group) {
     $group->post('/Crear', \usuarioController::class . ':CrearUsuario');
     $group->post('/Login', \usuarioController::class . ':retornarUsuario');
 });
+
+$app->get('/producto[/]', \productosController::class . ':RetornarProductos');
+$app->post('/altaproducto[/]', \productosController::class . ':Alta');
+$app->post('/eliminarproducto[/]', \productosController::class . ':DeleteProductos');
+$app->post('/FormModProducto[/]', \productosController::class . ':obtenerFormMod');
+$app->post('/modificarproducto[/]', \productosController::class . ':ModProductos');
+
 
 $app->run();
