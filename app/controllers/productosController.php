@@ -29,7 +29,7 @@ class productosController{
         public function obtenerFormMod($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
             $productos = new Producto();
-            $productos->id_producto = $listaDeParametros['id_producto'];
+            $productos->id_producto = $listaDeParametros['id'];
 
             $jsonproductos = Producto::FormModProducto($productos);
 
@@ -58,7 +58,7 @@ class productosController{
         public function DeleteProductos($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
             $productos=  new Producto();
-            $productos->id_producto =  $listaDeParametros['id_producto'];
+            $productos->id_producto =  $listaDeParametros['id'];
 
             Producto::EliminarProductos($productos);
             $response->getBody()->Write("producto eliminado");
