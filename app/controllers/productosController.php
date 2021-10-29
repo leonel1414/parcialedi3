@@ -15,7 +15,7 @@ class productosController{
         
 
                 $productos = new Producto();
-                $productos->id_producto = $listaDeParametros['id_producto'];
+                $productos->id_producto = $listaDeParametros['id'];
                 $productos->nombre = $listaDeParametros['nombre'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
                 $productos->precio = $listaDeParametros['precio'];
