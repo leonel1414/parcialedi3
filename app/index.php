@@ -47,17 +47,13 @@ $app->add(function (
     return $response;
 });
 
-
-$app->group('/Frontend', function (RouteCollectorProxy $group) {
-    $group->post('/Crear', \usuarioController::class . ':CrearUsuario');
-    $group->post('/Login', \usuarioController::class . ':retornarUsuario');
-});
-
-$app->get('/producto[/]', \productosController::class . ':RetornarProductos');
-$app->post('/altaproducto[/]', \productosController::class . ':Alta');
-$app->post('/eliminarproducto[/]', \productosController::class . ':DeleteProductos');
-$app->post('/FormModProducto[/]', \productosController::class . ':obtenerFormMod');
-$app->post('/modificarproducto[/]', \productosController::class . ':ModProductos');
+$app->post('[/]', \usuarioController::class . ':CrearUsuario');
+$app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
+$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
+$app->post('/altapelicula[/]', \peliculasController::class . ':Alta');
+$app->post('/eliminarpelicula[/]', \peliculasController::class . ':DeletePelicula');
+$app->post('/FormModPelicula[/]', \peliculasController::class . ':obtenerFormMod');
+$app->post('/modificarpelicula[/]', \peliculasController::class . ':ModPelicula');
 
 
 $app->run();
