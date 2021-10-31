@@ -49,11 +49,11 @@ $app->add(function (
 
 $app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
-$app->get('/peliculas[/]', \peliculasController::class . ':RetornarPeliculas');
-$app->post('/altapelicula[/]', \peliculasController::class . ':Alta');
-$app->post('/eliminarpelicula[/]', \peliculasController::class . ':DeletePelicula');
-$app->post('/FormModPelicula[/]', \peliculasController::class . ':obtenerFormMod');
-$app->post('/modificarpelicula[/]', \peliculasController::class . ':ModPelicula');
+$app->get('/productos[/]', \productoController::class . ':RetornarProductos');
+$app->post('/altaproducto[/]', \productoController::class . ':Alta');
+$app->post('/eliminarproducto[/]', \productoController::class . ':DeleteProductos');
+$app->post('/FormModProducto[/]', \productoController::class . ':obtenerFormMod');
+$app->post('/modificarproducto[/]', \productoController::class . ':ModProductos');
 
 
 $app->run();
