@@ -9,7 +9,7 @@ class usuarioController
 
         $usuario = new Usuario();
         $usuario->nombre = $listaDeParametros['nombre'];
-        $usuario->contrasenia = $listaDeParametros['contrasenia'];
+        $usuario->contrasenia = $listaDeParametros['contrasena'];
 
         Usuario::crearUsuario($usuario);
         $response->getBody()->write(json_encode($usuario));
@@ -24,7 +24,7 @@ class usuarioController
 
         $usuario = new Usuario();
         $usuario->nombre = $listaDeParametros['nombre'];
-        $usuario->contrasenia = $listaDeParametros['contrasenia'];
+        $usuario->contrasenia = $listaDeParametros['contrasena'];
 
         Usuario::retornarUsuario($usuario);
         //$response->getBody()->write(json_encode($usuario));
