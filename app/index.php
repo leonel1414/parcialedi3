@@ -34,7 +34,7 @@ $app->add(function (
     $response = $response->withHeader('Access-Control-Allow-Origin', '*');
     $response = $response->withHeader(
         'Access-Control-Allow-Methods',
-        'get,post'
+        'get,post,option'
     );
     $response = $response->withHeader(
         'Access-Control-Allow-Headers',
