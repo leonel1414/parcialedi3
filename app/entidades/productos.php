@@ -24,10 +24,10 @@
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `productos`(`nombre`,`descripcion`,`precio`,`imagen`) VALUES (?,?,?,?)");
+    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `productos`(`titulo`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?)");
     
    
-    $consulta->execute([$productos->nombre,$productos->descripcion,$productos->precio,$productos->imagen]);
+    $consulta->execute([$productos->titulo,$productos->descripcion,$productos->puntaje,$productos->imagen,$productos->anio,$productos->trailer]);
 
     return;
 }
@@ -58,8 +58,8 @@ public static function FormModProducto($productos)
        {
 
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("UPDATE `productos` SET `nombre` = ? , `descripcion` = ? , `precio` = ? , `imagen` = ? WHERE `id_producto` = ? ");
-            $consulta->execute([$productos->nombre, $productos->descripcion,$productos->precio, $productos->imagen]);
+            $consulta = $objAccesoDatos->prepararConsulta("UPDATE `productos` SET `titulo` = ? , `descripcion` = ? , `puntaje` = ? , `imagen` = ?, `anio` = ? ,`trailer` = ?  WHERE `id_producto` = ? ");
+            $consulta->execute([$productos->titulo, $productos->descripcion,$productos->puntaje, $productos->imagen, $productos->anio, $productos->trailer, $productos->id_producto]);
             return;
        }
 }
