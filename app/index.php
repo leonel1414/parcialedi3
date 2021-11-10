@@ -19,10 +19,7 @@ $app = AppFactory::create();
 $app->addErrorMiddleware(true, true, true);
 
 // Enable CORS
-$app->add(function (
-    Request $request,
-    RequestHandlerInterface $handler
-): Response {
+$app->add(function (Request $request,RequestHandlerInterface $handler): Response {
     // $routeContext = RouteContext::fromRequest($request);
     // $routingResults = $routeContext->getRoutingResults();
     // $methods = $routingResults->getAllowedMethods();
@@ -32,14 +29,8 @@ $app->add(function (
     $requestHeaders = $request->getHeaderLine('Access-Control-Request-Headers');
 
     $response = $response->withHeader('Access-Control-Allow-Origin', '*');
-    $response = $response->withHeader(
-        'Access-Control-Allow-Methods',
-        'get,post,option'
-    );
-    $response = $response->withHeader(
-        'Access-Control-Allow-Headers',
-        $requestHeaders
-    );
+    $response = $response->withHeader('Access-Control-Allow-Methods','get,post,option');
+    $response = $response->withHeader('Access-Control-Allow-Headers',$requestHeaders);
 
     // Optional: Allow Ajax CORS requests with Authorization header
     // $response = $response->withHeader('Access-Control-Allow-Credentials', 'true');
@@ -49,11 +40,11 @@ $app->add(function (
 
 $app->post('[/]', \usuarioController::class . ':CrearUsuario');
 $app->post('/login[/]', \usuarioController::class . ':retornarUsuario');
-$app->get('/productos[/]', \productoController::class . ':RetornarProductos');
-$app->post('/altaproducto[/]', \productoController::class . ':Alta');
-$app->post('/eliminarproducto[/]', \productoController::class . ':DeleteProductos');
-$app->post('/FormModProducto[/]', \productoController::class . ':obtenerFormMod');
-$app->post('/modificarproducto[/]', \productoController::class . ':ModProductos');
+$app->get('/productos[/]', \productosController::class . ':RetornarProductos');
+$app->post('/altaproducto[/]', \productosController::class . ':Alta');
+$app->post('/eliminarproducto[/]', \productosController::class . ':DeleteProductos');
+$app->post('/FormModProducto[/]', \productosController::class . ':obtenerFormMod');
+$app->post('/modificarproducto[/]', \productosController::class . ':ModProductos');
 
 
 $app->run();
