@@ -6,7 +6,7 @@ class productosController{
             $listaDeParametros = $request->getParsedBody();
 
             $jsonproductos = Producto::obtenerProducto();
-            $response->getBody()->Write(json_encode($jsonpeliculas));
+            $response->getBody()->Write(json_encode($jsonproductos));
             return $response ->withHeader('Content-Type', 'application/json');
 
         }
