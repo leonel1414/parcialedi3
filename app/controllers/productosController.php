@@ -15,11 +15,15 @@ class productosController{
         
 
                 $productos = new Producto();
-                $productos->id_producto = $listaDeParametros['id'];
-                $productos->nombre = $listaDeParametros['nombre'];
+                $productos->id_producto = $listaDeParametros['id_producto'];
+                $productos->nombre = $listaDeParametros['titulo'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
-                $productos->precio = $listaDeParametros['precio'];
+                $productos->precio = $listaDeParametros['puntaje'];
                 $productos->imagen = $listaDeParametros['imagen'];
+                $productos->imagen = $listaDeParametros['anio'];
+                $productos->imagen = $listaDeParametros['trailer'];
+               
+                
 
                 Producto::CrearProductos($productos);
                 $response->getBody()->write(json_encode($productos));
@@ -29,7 +33,7 @@ class productosController{
         public function obtenerFormMod($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
             $productos = new Producto();
-            $productos->id_producto = $listaDeParametros['id'];
+            $productos->id_producto = $listaDeParametros['id_producto'];
 
             $jsonproductos = Producto::FormModProducto($productos);
 
@@ -42,15 +46,18 @@ class productosController{
             $listaDeParametros = $request->getParsedBody();
 
             $productos = new Producto();
-            $productos->nombre = $listaDeParametros['nombre'];
-            $productos->descripcion = $listaDeParametros['descripcion'];
-            $productos->precio = $listaDeParametros['precio'];
-            $productos->imagen = $listaDeParametros['imagen'];
+                $productos->nombre = $listaDeParametros['titulo'];
+                $productos->descripcion = $listaDeParametros['descripcion'];
+                $productos->precio = $listaDeParametros['puntaje'];
+                $productos->imagen = $listaDeParametros['imagen'];
+                $productos->imagen = $listaDeParametros['anio'];
+                $productos->imagen = $listaDeParametros['trailer'];
+                $productos->id_producto = $listaDeParametros['id_producto'];
             
             
 
             Producto::ModificarProductos($productos);
-            $response->getBody()->write("producto modificado");
+            $response->getBody()->write("Juego modificado");
 
             return $response;
 
@@ -58,10 +65,10 @@ class productosController{
         public function DeleteProductos($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
             $productos=  new Producto();
-            $productos->id_producto =  $listaDeParametros['id'];
+            $productos->id_producto =  $listaDeParametros['id_producto'];
 
             Producto::EliminarProductos($productos);
-            $response->getBody()->Write("producto eliminado");
+            $response->getBody()->Write("Juego eliminado");
             return $response;
 
         }
