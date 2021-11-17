@@ -5,7 +5,7 @@ class productosController{
         public function RetornarProductos($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
 
-            $jsonproductos = Producto::obtenerProducto();
+            $jsonproductos = Productos::obtenerProducto();
             $response->getBody()->Write(json_encode($jsonproductos));
             return $response ->withHeader('Content-Type', 'application/json');
 
@@ -14,7 +14,7 @@ class productosController{
             $listaDeParametros = $request->getParsedBody();
         
 
-                $productos = new Producto();
+                $productos = new Productos();
                 $productos->id_producto = $listaDeParametros['id_producto'];
                 $productos->nombre = $listaDeParametros['titulo'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
@@ -32,7 +32,7 @@ class productosController{
         }
         public function obtenerFormMod($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
-            $productos = new Producto();
+            $productos = new Productos();
             $productos->id_producto = $listaDeParametros['id_producto'];
 
             $jsonproductos = Producto::FormModProducto($productos);
@@ -45,7 +45,7 @@ class productosController{
         public function ModProductos($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
 
-            $productos = new Producto();
+            $productos = new Productos();
                 $productos->nombre = $listaDeParametros['titulo'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
                 $productos->precio = $listaDeParametros['puntaje'];
@@ -64,7 +64,7 @@ class productosController{
         }
         public function DeleteProductos($request, $response, $args){
             $listaDeParametros = $request->getParsedBody();
-            $productos=  new Producto();
+            $productos=  new Productos();
             $productos->id_producto =  $listaDeParametros['id_producto'];
 
             Producto::EliminarProductos($productos);
