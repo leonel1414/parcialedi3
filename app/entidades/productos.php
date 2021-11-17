@@ -58,7 +58,7 @@ public static function FormModProducto($produ)
        {
 
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("UPDATE `productos` SET `titulo` = ? , `descripcion` = ? , `puntaje` = ? , `imagen` = ?, `anio` = ? ,`trailer` = ?  WHERE `id_producto` = ? ");
+            $consulta = $objAccesoDatos->prepararConsulta("UPDATE `productos` SET `titulo` = ? , `descripcion` = ? , `puntaje` = ? , `imagen` = ? , `anio` = ? ,`trailer` = ?  WHERE `id_producto` = ? ");
             $consulta->execute([$produ->titulo, $produ->descripcion,$produ->puntaje, $produ->imagen, $produ->anio, $produ->trailer, $produ->id_producto]);
             return;
        }
