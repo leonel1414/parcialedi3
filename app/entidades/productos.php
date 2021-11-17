@@ -24,7 +24,7 @@
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta('INSERT INTO `productos`(`titulo`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?)');
+    $consulta = $objAccesoDatos->prepararConsulta('INSERT INTO productos(`titulo`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?)');
     
    
     $consulta->execute([$productos->titulo,$productos->descripcion,$productos->puntaje,$productos->imagen,$productos->anio,$productos->trailer]);
