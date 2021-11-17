@@ -10,7 +10,7 @@
         public static function obtenerProducto()
         {
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `productos`");
+            $consulta = $objAccesoDatos->prepararConsulta('SELECT * FROM `productos`');
             $consulta->execute();
 
             
@@ -24,7 +24,7 @@
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO `productos`(`titulo`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?)");
+    $consulta = $objAccesoDatos->prepararConsulta('INSERT INTO `productos`(`titulo`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?)');
     
    
     $consulta->execute([$productos->titulo,$productos->descripcion,$productos->puntaje,$productos->imagen,$productos->anio,$productos->trailer]);
@@ -37,7 +37,7 @@
 
 
     $objAccesoDatos = AccesoDatos::obtenerInstancia();
-    $consulta = $objAccesoDatos->prepararConsulta("DELETE FROM `productos` WHERE id_producto = ? ");
+    $consulta = $objAccesoDatos->prepararConsulta('DELETE FROM `productos` WHERE id_producto = ? ');
   
     $consulta->execute([$productos->id_producto]);
 
@@ -58,7 +58,7 @@ public static function FormModProducto($productos)
        {
 
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("UPDATE `productos` SET `titulo` = ? , `descripcion` = ? , `puntaje` = ? , `imagen` = ?, `anio` = ? ,`trailer` = ?  WHERE `id_producto` = ? ");
+            $consulta = $objAccesoDatos->prepararConsulta('UPDATE `productos` SET `titulo` = ? , `descripcion` = ? , `puntaje` = ? , `imagen` = ?, `anio` = ? ,`trailer` = ?  WHERE `id_producto` = ? ');
             $consulta->execute([$productos->titulo, $productos->descripcion,$productos->puntaje, $productos->imagen, $productos->anio, $productos->trailer, $productos->id_producto]);
             return;
        }
