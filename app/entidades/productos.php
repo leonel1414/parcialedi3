@@ -19,7 +19,7 @@
         
         }
     
-    public static function CrearProductos($productos)
+    public static function CrearProductos($produ)
 {
 
 
@@ -27,7 +27,7 @@
     $consulta = $objAccesoDatos->prepararConsulta("INSERT INTO  `productos`(`titulo`,`descripcion`,`puntaje`,`imagen`,`anio`,`trailer`) VALUES (?,?,?,?,?,?)");
     
    
-    $consulta->execute([$productos->titulo,$productos->descripcion,$productos->puntaje,$productos->imagen,$productos->anio,$productos->trailer]);
+    $consulta->execute([$produ->titulo,$produ->descripcion,$produ->puntaje,$produ->imagen,$produ->anio,$produ->trailer]);
 
     return;
 }
