@@ -50,8 +50,8 @@ class productosController{
                 $productos->descripcion = $listaDeParametros['descripcion'];
                 $productos->precio = $listaDeParametros['puntaje'];
                 $productos->imagen = $listaDeParametros['imagen'];
-                $productos->imagen = $listaDeParametros['anio'];
-                $productos->imagen = $listaDeParametros['trailer'];
+                $productos->anio = $listaDeParametros['anio'];
+                $productos->trailer = $listaDeParametros['trailer'];
                 $productos->id_producto = $listaDeParametros['id_producto'];
             
             
