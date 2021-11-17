@@ -16,7 +16,7 @@ class productosController{
 
                 $productos = new Productos();
                 $productos->id_producto = $listaDeParametros['id_producto'];
-                $productos->nombre = $listaDeParametros['titulo'];
+                $productos->titulo = $listaDeParametros['titulo'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
                 $productos->puntaje = $listaDeParametros['puntaje'];
                 $productos->imagen = $listaDeParametros['imagen'];
@@ -46,7 +46,7 @@ class productosController{
             $listaDeParametros = $request->getParsedBody();
 
             $productos = new Productos();
-                $productos->nombre = $listaDeParametros['titulo'];
+                $productos->titulo = $listaDeParametros['titulo'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
                 $productos->puntaje = $listaDeParametros['puntaje'];
                 $productos->imagen = $listaDeParametros['imagen'];
