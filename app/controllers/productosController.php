@@ -18,7 +18,7 @@ class productosController{
                 $productos->id_producto = $listaDeParametros['id_producto'];
                 $productos->nombre = $listaDeParametros['titulo'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
-                $productos->precio = $listaDeParametros['puntaje'];
+                $productos->puntaje = $listaDeParametros['puntaje'];
                 $productos->imagen = $listaDeParametros['imagen'];
                 $productos->anio = $listaDeParametros['anio'];
                 $productos->trailer = $listaDeParametros['trailer'];
@@ -48,7 +48,7 @@ class productosController{
             $productos = new Productos();
                 $productos->nombre = $listaDeParametros['titulo'];
                 $productos->descripcion = $listaDeParametros['descripcion'];
-                $productos->precio = $listaDeParametros['puntaje'];
+                $productos->puntaje = $listaDeParametros['puntaje'];
                 $productos->imagen = $listaDeParametros['imagen'];
                 $productos->anio = $listaDeParametros['anio'];
                 $productos->trailer = $listaDeParametros['trailer'];
