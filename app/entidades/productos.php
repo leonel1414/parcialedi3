@@ -10,7 +10,7 @@
         public static function obtenerProducto()
         {
             $objAccesoDatos = AccesoDatos::obtenerInstancia();
-            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM 'productos'");
+            $consulta = $objAccesoDatos->prepararConsulta("SELECT * FROM `productos`");
             $consulta->execute();
 
             
