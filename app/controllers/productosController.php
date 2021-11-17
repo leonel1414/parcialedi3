@@ -25,7 +25,7 @@ class productosController{
                
                 
 
-                Producto::CrearProductos($productos);
+                Productos::CrearProductos($productos);
                 $response->getBody()->write(json_encode($productos));
 
                 return $response;
@@ -35,7 +35,7 @@ class productosController{
             $productos = new Productos();
             $productos->id_producto = $listaDeParametros['id_producto'];
 
-            $jsonproductos = Producto::FormModProducto($productos);
+            $jsonproductos = Productos::FormModProducto($productos);
 
             $response->getBody()->Write(json_encode($jsonproductos));
             return $response ->withHeader('Content-Type', 'application/json');
@@ -56,7 +56,7 @@ class productosController{
             
             
 
-            Producto::ModificarProductos($productos);
+            Productos::ModificarProductos($productos);
             $response->getBody()->write("Juego modificado");
 
             return $response;
@@ -67,7 +67,7 @@ class productosController{
             $productos=  new Productos();
             $productos->id_producto =  $listaDeParametros['id_producto'];
 
-            Producto::EliminarProductos($productos);
+            Productos::EliminarProductos($productos);
             $response->getBody()->Write("Juego eliminado");
             return $response;
 
