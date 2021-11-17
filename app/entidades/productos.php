@@ -1,6 +1,6 @@
 <?php   
 
-    class Producto{
+    class Productos{
   
         //atributos
         public $titulo;
